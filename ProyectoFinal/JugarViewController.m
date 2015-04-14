@@ -26,6 +26,7 @@
     self.SPACEBETWEENBUTTONS = 10;
     self.STARTINGX = 50;
     self.STARTINGY = 500;
+    self.tfPalabraAdivinada.hidden = true;
      [self initTiles];
 }
 - (void)viewDidUnload
@@ -70,7 +71,9 @@
         [self.view addSubview:b];
     }
     
-    
+    // Dibujo de botones superiores
+    NSLog(@"%ld", numberOfButtons);
+    if(numberOfButtons != 0){
     for (int count = 0; count < word.length; count++)
     {
         UIButton *b = [[UIButton alloc] initWithFrame:CGRectMake(self.STARTINGX + (self.SPACEBETWEENBUTTONS + self.BUTTONWIDTH) * count, 350, self.BUTTONWIDTH, self.BUTTONHEIGHT)];
@@ -82,6 +85,10 @@
         [self.arregloBotonesPalabra addObject:b];
         [self.view addSubview:b];
     }
+    } else {
+        self.tfPalabraAdivinada.hidden = false;
+    }
+    
 }
 
 -(IBAction)letraDeBancoPresionada:(id)sender {
@@ -94,7 +101,6 @@
     
     for(int i = 0 ; i < self.arregloBotonesPalabra.count ; i++){
         UIButton* selectedButton = [self.arregloBotonesPalabra objectAtIndex: i];
-        NSLog(@"Working");
         if ([[selectedButton currentTitle] isEqualToString:@""]){
             [selectedButton setTitle:buttonTitle forState:UIControlStateNormal];
             [self.arregloBotonesPalabra setObject:selectedButton atIndexedSubscript:i];
@@ -104,7 +110,18 @@
 }
 
 -(IBAction)letraDeRespuestaPresionada:(id)sender{
+    UIButton *button = (UIButton * ) sender;
+    NSString *titulo = button.currentTitle;
     
+    for (UIButton *bu in self.arregloBotones){
+        if (bu.isHidden){
+            [bu setTitle:titulo forState:UIControlStateNormal];
+            bu.hidden = false;
+            break;
+        }
+    }
+    
+    [button setTitle:@"" forState:UIControlStateNormal];
 }
 
 

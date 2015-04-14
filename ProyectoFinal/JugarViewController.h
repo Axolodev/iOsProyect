@@ -14,4 +14,6 @@
 @property (nonatomic, retain) IBOutletCollection(UIButton) NSMutableArray *arregloBotones;
 @property (nonatomic, retain) IBOutletCollection(UIButton) NSMutableArray *arregloBotonesPalabra;
 
+@property (strong, nonatomic) IBOutlet UITextField *tfPalabraAdivinada;
+
 @end
