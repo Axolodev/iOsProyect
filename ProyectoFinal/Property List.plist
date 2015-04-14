@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<array>
+		<dict>
+			<key>idCat</key>
+			<integer>1</integer>
+			<key>nombreCat</key>
+			<string>Banderas</string>
+		</dict>
+		<dict>
+			<key>idCat</key>
+			<integer>2</integer>
+			<key>nombreCat</key>
+			<string>Anatomia</string>
+		</dict>
+		<dict>
+			<key>idCat</key>
+			<integer>3</integer>
+			<key>nombreCat</key>
+			<string>Colores</string>
+		</dict>
+	</array>
+	<array>
+		<dict>
+			<key>imagen</key>
+			<string>http://st-listas.20minutos.es/images/2010-05/214843/2326489_640px.jpg?1272764176</string>
+			<key>idCat</key>
+			<integer>0</integer>
+			<key>errores</key>
+			<integer>0</integer>
+			<key>correctas</key>
+			<integer>0</integer>
+			<key>palabra</key>
+			<string>Chile</string>
+		</dict>
+		<dict>
+			<key>imagen</key>
+			<string>http://img2.wikia.nocookie.net/__cb20140717212724/watch-dogs/es/images/2/29/Bandera_M%C3%A9xico.jpg</string>
+			<key>idCat</key>
+			<integer>0</integer>
+			<key>errores</key>
+			<integer>0</integer>
+			<key>correctas</key>
+			<integer>0</integer>
+			<key>palabra</key>
+			<string>Mexico</string>
+		</dict>
+	</array>
+</array>
+</plist>
