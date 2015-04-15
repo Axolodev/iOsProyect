@@ -27,7 +27,12 @@
     self.STARTINGX = 50;
     self.STARTINGY = 500;
     self.tfPalabraAdivinada.hidden = true;
-     [self initTiles];
+    self.stPalabraAAdivinar = @"1234";
+    if ([self.stDificultad integerValue] == 3) {
+        self.buEliminarLetra.hidden = YES;
+        self.buMostrarLetra.hidden = YES;
+    }
+    [self initTiles];
 }
 - (void)viewDidUnload
 {
@@ -40,8 +45,7 @@
 }
 -(void)initTiles
 {
-    NSString *word = @"word";
-    NSInteger numberOfButtons = [self getNumberOfButtons:word];
+    NSInteger numberOfButtons = [self getNumberOfButtons:self.stPalabraAAdivinar];
     self.arregloBotones = [[NSMutableArray alloc] initWithCapacity:numberOfButtons];
     self.arregloBotonesPalabra = [[NSMutableArray alloc] initWithCapacity:numberOfButtons];
     
@@ -74,42 +78,45 @@
     // Dibujo de botones superiores
     NSLog(@"%ld", numberOfButtons);
     if(numberOfButtons != 0){
-    for (int count = 0; count < word.length; count++)
-    {
-        UIButton *b = [[UIButton alloc] initWithFrame:CGRectMake(self.STARTINGX + (self.SPACEBETWEENBUTTONS + self.BUTTONWIDTH) * count, 350, self.BUTTONWIDTH, self.BUTTONHEIGHT)];
-        [b setTitle:[NSString stringWithFormat:@""] forState:UIControlStateNormal];
-        [b setTag:count];
-        [b setHidden:NO];
-        [b addTarget:self action:@selector(letraDeRespuestaPresionada:) forControlEvents:UIControlEventTouchUpInside];
-        [b setBackgroundColor:[UIColor blueColor]];
-        [self.arregloBotonesPalabra addObject:b];
-        [self.view addSubview:b];
-    }
+        for (int count = 0; count < self.stPalabraAAdivinar.length; count++)
+        {
+            UIButton *b = [[UIButton alloc] initWithFrame:CGRectMake(self.STARTINGX + (self.SPACEBETWEENBUTTONS + self.BUTTONWIDTH) * count, 350, self.BUTTONWIDTH, self.BUTTONHEIGHT)];
+            [b setTitle:[NSString stringWithFormat:@""] forState:UIControlStateNormal];
+            [b setTag:count];
+            [b setHidden:NO];
+            [b addTarget:self action:@selector(letraDeRespuestaPresionada:) forControlEvents:UIControlEventTouchUpInside];
+            [b setBackgroundColor:[UIColor blueColor]];
+            [self.arregloBotonesPalabra addObject:b];
+            [self.view addSubview:b];
+        }
     } else {
         self.tfPalabraAdivinada.hidden = false;
     }
     
 }
 
--(IBAction)letraDeBancoPresionada:(id)sender {
+
+- (IBAction)letraDeBancoPresionada:(id)sender {
     NSLog(@"button pressed");
     
     UIButton *button = (UIButton *) sender;
     
-    button.hidden = YES;
-    NSString *buttonTitle = button.titleLabel.text;
-    
-    for(int i = 0 ; i < self.arregloBotonesPalabra.count ; i++){
-        UIButton* selectedButton = [self.arregloBotonesPalabra objectAtIndex: i];
-        if ([[selectedButton currentTitle] isEqualToString:@""]){
-            [selectedButton setTitle:buttonTitle forState:UIControlStateNormal];
-            [self.arregloBotonesPalabra setObject:selectedButton atIndexedSubscript:i];
-            break;
+    if (button.isEnabled) {
+        button.hidden = YES;
+        NSString *buttonTitle = button.titleLabel.text;
+        
+        for(int i = 0 ; i < self.arregloBotonesPalabra.count ; i++){
+            UIButton* selectedButton = [self.arregloBotonesPalabra objectAtIndex: i];
+            if ([[selectedButton currentTitle] isEqualToString:@""]){
+                [selectedButton setTitle:buttonTitle forState:UIControlStateNormal];
+                [self.arregloBotonesPalabra setObject:selectedButton atIndexedSubscript:i];
+                break;
+            }
         }
     }
 }
 
--(IBAction)letraDeRespuestaPresionada:(id)sender{
+- (IBAction)letraDeRespuestaPresionada:(id)sender{
     UIButton *button = (UIButton * ) sender;
     NSString *titulo = button.currentTitle;
     
@@ -137,13 +144,31 @@
 }
 
 /*
-#pragma mark - Navigation
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)bupEliminarLetra:(id)sender {
+    
 }
-*/
+
+- (IBAction)bupMostrarLetra:(id)sender {
+    int ctr = 0;
+    for (UIButton *bu in self.arregloBotonesPalabra){
+        if (bu.isEnabled && ![[self.stPalabraAAdivinar substringWithRange:NSMakeRange(ctr, 1)] isEqualToString:bu.currentTitle]){
+            [bu setTitle:
+             [self.stPalabraAAdivinar substringWithRange:NSMakeRange(ctr, 1)] forState:UIControlStateNormal];
+            bu.enabled = false;
+            break;
+        }
+        ctr++;
+    }
+    
+}
 
 @end

@@ -13,7 +13,11 @@
 @property (nonatomic, strong) NSString *stCategoria;
 @property (nonatomic, retain) IBOutletCollection(UIButton) NSMutableArray *arregloBotones;
 @property (nonatomic, retain) IBOutletCollection(UIButton) NSMutableArray *arregloBotonesPalabra;
-
+@property (nonatomic, strong) NSString *stPalabraAAdivinar;
 @property (strong, nonatomic) IBOutlet UITextField *tfPalabraAdivinada;
+@property (strong, nonatomic) IBOutlet UIButton *buEliminarLetra;
+- (IBAction)bupEliminarLetra:(id)sender;
+- (IBAction)bupMostrarLetra:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *buMostrarLetra;
 
 @end

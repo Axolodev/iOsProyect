@@ -86,11 +86,33 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYW-lP-M7s">
+                                <rect key="frame" x="274" y="441" width="30" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.61498070159999996" blue="0.77184453740000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Mo">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="bupMostrarLetra:" destination="cQc-ge-8h5" eventType="touchUpInside" id="WNI-vG-QTM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTz-CA-XUm">
+                                <rect key="frame" x="274" y="394" width="30" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.61498070159999996" blue="0.77184453740000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="El">
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="bupEliminarLetra:" destination="cQc-ge-8h5" eventType="touchUpInside" id="ZZS-rK-OxQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="buEliminarLetra" destination="lTz-CA-XUm" id="clx-bm-biW"/>
+                        <outlet property="buMostrarLetra" destination="rYW-lP-M7s" id="Sbl-yA-q1C"/>
                         <outlet property="tfPalabraAdivinada" destination="MUd-LZ-Hf1" id="sGB-gC-f8Q"/>
                     </connections>
                 </viewController>
