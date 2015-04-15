@@ -8,15 +8,28 @@
 
 #import "FinalViewController.h"
 
+#import "ViewController.h"
+
 @interface FinalViewController ()
 
 @end
 
 @implementation FinalViewController
-
+- (IBAction)Next{
+    
+    ViewController *otherView = [[ViewController alloc] initWithNibName:nil bundle:nil ];
+    [self presentViewController:otherView animated:YES completion:NULL];
+    
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    if(self.resultadoJugada){
+        self.lbGanoPerdio.text = @"Ganaste!!";
+    }
+    else{
+        self.lbGanoPerdio.text = @"Perdiste!!";
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -25,13 +38,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

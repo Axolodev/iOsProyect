@@ -10,4 +10,9 @@
 
 @interface FinalViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UILabel *lbGanoPerdio;
+@property  Boolean resultadoJugada;
+
+
+
 @end
