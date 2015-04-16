@@ -2,8 +2,8 @@
 //  main.m
 //  ProyectoFinal
 //
-//  Created by alumno on 10/04/15.
-//  Copyright (c) 2015 ITESM. All rights reserved.
+//  Created by alumno on 16/04/15.
+//  Copyright (c) 2015 dagonar. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
