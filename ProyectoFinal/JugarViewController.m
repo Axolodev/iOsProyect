@@ -8,6 +8,7 @@
 
 #import "JugarViewController.h"
 #import "FinalViewController.h"
+
 @interface JugarViewController ()
 @property const NSInteger BUTTONWIDTH;
 @property const NSInteger BUTTONHEIGHT;
@@ -47,8 +48,7 @@
 {
     NSInteger numberOfButtons = [self getNumberOfButtons:self.stPalabraAAdivinar];
     self.arregloBotones = [[NSMutableArray alloc] initWithCapacity:numberOfButtons];
-    self.arregloBotonesPalabra = [[NSMutableArray alloc] initWithCapacity:numberOfButtons];
-    
+    self.arregloBotonesRespuesta = [[NSMutableArray alloc] initWithCapacity:numberOfButtons];
     NSInteger buttonsInUpperRow = numberOfButtons / 2, buttonsInLowerRow = numberOfButtons - buttonsInUpperRow;
     
     for (int count = 0; count < buttonsInUpperRow; count++)
@@ -86,7 +86,7 @@
             [b setHidden:NO];
             [b addTarget:self action:@selector(letraDeRespuestaPresionada:) forControlEvents:UIControlEventTouchUpInside];
             [b setBackgroundColor:[UIColor blueColor]];
-            [self.arregloBotonesPalabra addObject:b];
+            [self.arregloBotonesRespuesta addObject:b];
             [self.view addSubview:b];
         }
     } else {
@@ -107,20 +107,17 @@
     return character;
 }
 
-- (IBAction)letraDeBancoPresionada:(id)sender {
-    NSLog(@"button pressed");
-    
+- (IBAction)letraDeBancoPresionada:(id)sender {    
     UIButton *button = (UIButton *) sender;
     
     if (button.isEnabled) {
         button.hidden = YES;
         NSString *buttonTitle = button.titleLabel.text;
-        
-        for(int i = 0 ; i < self.arregloBotonesPalabra.count ; i++){
-            UIButton* selectedButton = [self.arregloBotonesPalabra objectAtIndex: i];
+        for(int i = 0 ; i < self.arregloBotonesRespuesta.count ; i++){
+            UIButton* selectedButton = [self.arregloBotonesRespuesta objectAtIndex: i];
             if ([[selectedButton currentTitle] isEqualToString:@""]){
                 [selectedButton setTitle:buttonTitle forState:UIControlStateNormal];
-                [self.arregloBotonesPalabra setObject:selectedButton atIndexedSubscript:i];
+                [self.arregloBotonesRespuesta setObject:selectedButton atIndexedSubscript:i];
                 break;
             }
         }
@@ -157,6 +154,7 @@
 }
 
 
+
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
         
       if([[segue identifier] isEqualToString:@"segueFinal"]){
@@ -170,12 +168,29 @@
 
 
 - (IBAction)bupEliminarLetra:(id)sender {
-    
+    NSString *helper = [NSString stringWithFormat:@"%@", self.stPalabraAAdivinar];
+    NSRange r;
+    for (int i = 0 ; i < self.arregloBotones.count ; i++){
+        UIButton *bu = [self.arregloBotones objectAtIndex:i];
+        if (helper.length == 0) {
+            r.location = NSNotFound;
+        } else {
+            r = [helper rangeOfString:bu.currentTitle];
+        }
+        if (r.location == NSNotFound && !(bu.isHidden)) {
+            bu.hidden = true;
+            i--;
+            break;
+        } else if(r.location != NSNotFound){
+            helper = [NSString stringWithFormat:@"%@%@", [helper substringWithRange:NSMakeRange(0, r.location)], [helper substringFromIndex:(r.length + r.location)]];
+        }
+    }
 }
 
 - (IBAction)bupMostrarLetra:(id)sender {
     int ctr = 0;
-    for (UIButton *bu in self.arregloBotonesPalabra){
+
+    for (UIButton *bu in self.arregloBotonesRespuesta){
         if (bu.isEnabled && ![[self.stPalabraAAdivinar substringWithRange:NSMakeRange(ctr, 1)] isEqualToString:bu.currentTitle]){
             [bu setTitle:
              [self.stPalabraAAdivinar substringWithRange:NSMakeRange(ctr, 1)] forState:UIControlStateNormal];

@@ -20,7 +20,4 @@
 @property(strong,nonatomic) id <EliminarVistas> delegado;
 @property  Boolean resultadoJugada;
 
-
-
-
 @end
