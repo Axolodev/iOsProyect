@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>820837E3-DEEF-4DBE-9B39-722EAEFB8AC5</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ProyectoFinal</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>5CD4FC9BBC95235DD7E2081B0C720C5F02ECBBB5</key>
+		<string>https://github.com/mortaldraw/iOsProyect.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ProyectoFinal.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>5CD4FC9BBC95235DD7E2081B0C720C5F02ECBBB5</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/mortaldraw/iOsProyect.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>5CD4FC9BBC95235DD7E2081B0C720C5F02ECBBB5</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5CD4FC9BBC95235DD7E2081B0C720C5F02ECBBB5</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOsProyect</string>
+		</dict>
+	</array>
+</dict>
+</plist>
