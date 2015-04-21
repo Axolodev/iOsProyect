@@ -95,6 +95,17 @@
     
 }
 
+//Rohertito esto genera Random Chars
+
+-(char) generateRandomChar{
+    int r = rand() % 26 + 'a';
+    char character;
+    character = (char) r;
+    
+    NSLog(@"%c",character);
+    
+    return character;
+}
 
 - (IBAction)letraDeBancoPresionada:(id)sender {
     NSLog(@"button pressed");
@@ -114,6 +125,8 @@
             }
         }
     }
+  
+    
 }
 
 - (IBAction)letraDeRespuestaPresionada:(id)sender{
