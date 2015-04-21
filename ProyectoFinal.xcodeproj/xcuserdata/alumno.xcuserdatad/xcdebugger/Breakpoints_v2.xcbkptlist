@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProyectoFinal/JugarViewController.m"
-            timestampString = "451246799.280495"
+            timestampString = "451321388.4906"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
-            landmarkName = "-prepareForSegue:sender:"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "-letraDeRespuestaPresionada:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

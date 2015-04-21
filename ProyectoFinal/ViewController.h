@@ -8,12 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "FinalViewController.h"
-
-
-
 @interface ViewController : UIViewController
 <UIPickerViewAccessibilityDelegate,UIPickerViewDataSource, EliminarVistas>
-
 
 @property (strong, nonatomic) NSArray *arregloDif;
 @property (strong, nonatomic) NSArray *arregloCategoria;

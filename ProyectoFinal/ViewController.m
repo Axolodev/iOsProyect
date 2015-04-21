@@ -85,6 +85,7 @@
          NSString *valor2 = [self.arregloDif objectAtIndex:reng2];
          jvc.stCategoria = valor1;
          jvc.stDificultad = valor2;
+
          jvc.vc = self;
          
      }
@@ -98,4 +99,5 @@
 -(IBAction) unwind	:(UIStoryboardSegue *)segue{
     
 }
+
 @end

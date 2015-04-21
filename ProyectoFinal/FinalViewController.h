@@ -19,8 +19,5 @@
 
 @property(strong,nonatomic) id <EliminarVistas> delegado;
 @property  Boolean resultadoJugada;
-- (IBAction)moveMenu:(id)sender;
-
-
 
 @end

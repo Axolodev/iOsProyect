@@ -16,6 +16,13 @@
 
 @implementation FinalViewController
 
+- (IBAction)Next{
+    
+    ViewController *otherView = [[ViewController alloc] initWithNibName:nil bundle:nil ];
+    [self presentViewController:otherView animated:YES completion:NULL];
+    
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     if(self.resultadoJugada){
@@ -40,7 +47,5 @@
  // Pass the selected object to the new view controller.
  }
  */
-
-
 
 @end
