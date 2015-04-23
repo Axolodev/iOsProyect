@@ -33,6 +33,7 @@
         self.buEliminarLetra.hidden = YES;
         self.buMostrarLetra.hidden = YES;
     }
+    [self filtrarPalabrasDeDiccionario];
     [self initTiles];
 }
 - (void)viewDidUnload
@@ -44,6 +45,26 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void) filtrarPalabrasDeDiccionario{
+    unsigned long l = [self.diccionarioPalabras count];
+    
+    NSDictionary *temp;
+    
+    for(unsigned long i = 0 ; i < l ; i++){
+        temp = [self.diccionarioPalabras objectAtIndex:i];
+        if ([[temp objectForKey:@"idCat"] integerValue] != self.idCategoria) {
+            [self.diccionarioPalabras removeObjectAtIndex:i];
+            l = [self.diccionarioPalabras count];
+            i--;
+        }
+    }
+    
+    for(unsigned long i = 0 ; i < l ; i++){
+        NSLog(@"%@", [[self.diccionarioPalabras objectAtIndex:i] objectForKey:@"palabra"] );
+    }
+}
+
 -(void)initTiles
 {
     NSInteger numberOfButtons = [self getNumberOfButtons:self.stPalabraAAdivinar];
@@ -76,7 +97,6 @@
     }
     
     // Dibujo de botones superiores
-    NSLog(@"%ld", numberOfButtons);
     if(numberOfButtons != 0){
         for (int count = 0; count < self.stPalabraAAdivinar.length; count++)
         {
@@ -101,8 +121,6 @@
     int r = rand() % 26 + 'a';
     char character;
     character = (char) r;
-    
-    NSLog(@"%c",character);
     
     return character;
 }
@@ -200,6 +218,16 @@
         ctr++;
     }
     
+}
+
+-(NSString*) elegirPalabraPList{
+    NSString *palabra;
+    
+    
+    
+    
+    
+    return palabra;
 }
 
 @end

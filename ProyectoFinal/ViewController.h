@@ -12,10 +12,12 @@
 <UIPickerViewAccessibilityDelegate,UIPickerViewDataSource, EliminarVistas>
 
 @property (strong, nonatomic) NSArray *arregloDif;
-@property (strong, nonatomic) NSArray *arregloCategoria;
+@property (strong, nonatomic) NSMutableArray *arregloCategoria;
 @property (strong, nonatomic) IBOutlet UIPickerView *picker;
 @property (strong, nonatomic) IBOutlet UITextField *tfCat;
 @property (strong, nonatomic) IBOutlet UITextField *tfDif;
+@property (strong,nonatomic) NSArray *arregloPList;
+
 
 
 @end

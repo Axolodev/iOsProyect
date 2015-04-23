@@ -27,7 +27,7 @@
 			<key>imagen</key>
 			<string>http://www.monografias.com/trabajos82/huesos-craneo/image003.jpg</string>
 			<key>idCat</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>errores</key>
 			<integer>0</integer>
 			<key>correctas</key>
@@ -39,7 +39,7 @@
 			<key>imagen</key>
 			<string>https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQv7vRHr43uPQnnJzHutN-cYxq0dugt9kfoMMWtYTPdAePpuAzg</string>
 			<key>idCat</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>errores</key>
 			<integer>0</integer>
 			<key>correctas</key>
@@ -51,7 +51,7 @@
 			<key>imagen</key>
 			<string>http://psicoucab.tripod.com/expo/8/8.htm4.jpg</string>
 			<key>idCat</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>errores</key>
 			<integer>0</integer>
 			<key>correctas</key>
@@ -63,7 +63,7 @@
 			<key>imagen</key>
 			<string>https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRem-bo4eeJtPZFzmWCq0eYi-FsEerIyRwOEh91W9YYycnasY7QYA</string>
 			<key>idCat</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>errores</key>
 			<integer>0</integer>
 			<key>correctas</key>
@@ -75,7 +75,7 @@
 			<key>imagen</key>
 			<string>https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQenAQ4IjI-RgDTMsgIHRdXsEkK6OJ6ID8N-Qc-9hrapkBSh-vM</string>
 			<key>idCat</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>errores</key>
 			<integer>0</integer>
 			<key>correctas</key>
@@ -87,7 +87,7 @@
 			<key>imagen</key>
 			<string>http://patentados.com/img/2005/articulacion-de-reemplazo-entre-metacarpiano-y-falange.png</string>
 			<key>idCat</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>errores</key>
 			<integer>0</integer>
 			<key>correctas</key>
@@ -99,7 +99,7 @@
 			<key>imagen</key>
 			<string>https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYa9Lg2GkyN2bB0ta04FiAEPOH4O8XAj5oOpHZcmDu7qvGUkpv</string>
 			<key>idCat</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>errores</key>
 			<integer>0</integer>
 			<key>correctas</key>
@@ -111,7 +111,7 @@
 			<key>imagen</key>
 			<string>https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTlLvCF5gA2Oe8Wrip5-AUQp45JuU6xxSmBUg_gt1ImHCWrLsOFDg</string>
 			<key>idCat</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>errores</key>
 			<integer>0</integer>
 			<key>correctas</key>
@@ -123,7 +123,7 @@
 			<key>imagen</key>
 			<string>http://i944.photobucket.com/albums/ad290/gingerglamalgan/femur.jpg</string>
 			<key>idCat</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>errores</key>
 			<integer>0</integer>
 			<key>correctas</key>
@@ -135,7 +135,7 @@
 			<key>imagen</key>
 			<string>http://3mcollision.com/media/catalog/product/cache/5/image/9df78eab33525d08d6e5fb8d27136e95/s/t/striping_color-97-Medium-Dark-Gray.jpg</string>
 			<key>idCat</key>
-			<integer>0</integer>
+			<integer>3</integer>
 			<key>errores</key>
 			<integer>0</integer>
 			<key>correctas</key>
@@ -147,7 +147,7 @@
 			<key>imagen</key>
 			<string>http://significadodeloscolores.info/wp-content/uploads/2014/08/color-negro.png</string>
 			<key>idCat</key>
-			<integer>0</integer>
+			<integer>3</integer>
 			<key>errores</key>
 			<integer>0</integer>
 			<key>correctas</key>
@@ -159,7 +159,7 @@
 			<key>imagen</key>
 			<string>http://3mcollision.com/media/catalog/product/cache/5/image/9df78eab33525d08d6e5fb8d27136e95/s/t/striping_color-70-Brown-Metallic_1.jpg</string>
 			<key>idCat</key>
-			<integer>0</integer>
+			<integer>3</integer>
 			<key>errores</key>
 			<integer>0</integer>
 			<key>correctas</key>
@@ -171,7 +171,7 @@
 			<key>imagen</key>
 			<string>http://st-listas.20minutos.es/images/2013-03/356473/3936175_640px.jpg?1362229995</string>
 			<key>idCat</key>
-			<integer>0</integer>
+			<integer>3</integer>
 			<key>errores</key>
 			<integer>0</integer>
 			<key>correctas</key>
@@ -183,7 +183,7 @@
 			<key>imagen</key>
 			<string>http://f.tqn.com/y/arte/1/W/v/3/-/-/Color-Amarillo.jpg</string>
 			<key>idCat</key>
-			<integer>0</integer>
+			<integer>3</integer>
 			<key>errores</key>
 			<integer>0</integer>
 			<key>correctas</key>
@@ -195,7 +195,7 @@
 			<key>imagen</key>
 			<string>https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ6dMawJtWwq1J8-4gHDzNOTF5fqYZN6PW6gDU_8XqVspdb4JnF</string>
 			<key>idCat</key>
-			<integer>0</integer>
+			<integer>3</integer>
 			<key>errores</key>
 			<integer>0</integer>
 			<key>correctas</key>
@@ -207,7 +207,7 @@
 			<key>imagen</key>
 			<string>http://img3.wikia.nocookie.net/__cb20131102223114/horadeaventura/es/images/a/a0/Morado-09.jpg</string>
 			<key>idCat</key>
-			<integer>0</integer>
+			<integer>3</integer>
 			<key>errores</key>
 			<integer>0</integer>
 			<key>correctas</key>
@@ -219,7 +219,7 @@
 			<key>imagen</key>
 			<string>http://3mcollision.com/media/catalog/product/cache/5/image/9df78eab33525d08d6e5fb8d27136e95/7/7/77068.jpg</string>
 			<key>idCat</key>
-			<integer>0</integer>
+			<integer>3</integer>
 			<key>errores</key>
 			<integer>0</integer>
 			<key>correctas</key>
@@ -231,7 +231,7 @@
 			<key>imagen</key>
 			<string>http://img1.findthebest.com/sites/default/files/2307/media/images/Magenta_Process_429426_i0.png</string>
 			<key>idCat</key>
-			<integer>0</integer>
+			<integer>3</integer>
 			<key>errores</key>
 			<integer>0</integer>
 			<key>correctas</key>
@@ -243,7 +243,7 @@
 			<key>imagen</key>
 			<string>http://img.absolut-brasil.com/wp-content/uploads/2008/09/brasil-bandera.jpg</string>
 			<key>idCat</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>errores</key>
 			<integer>0</integer>
 			<key>correctas</key>
@@ -255,7 +255,7 @@
 			<key>imagen</key>
 			<string>https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ_bl5n8g25mqY-5sfpPLbq1Z6cXzRTKs-g-qrg2ka9ltugFx1a </string>
 			<key>idCat</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>errores</key>
 			<integer>0</integer>
 			<key>correctas</key>
@@ -267,7 +267,7 @@
 			<key>imagen</key>
 			<string>http://www.banderas-mundo.es/data/flags/ultra/cu.png</string>
 			<key>idCat</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>errores</key>
 			<integer>0</integer>
 			<key>correctas</key>
@@ -279,7 +279,7 @@
 			<key>imagen</key>
 			<string>http://www.mapsofworld.com/images/world-countries-flags/french-guiana-flag.gif</string>
 			<key>idCat</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>errores</key>
 			<integer>0</integer>
 			<key>correctas</key>
@@ -291,7 +291,7 @@
 			<key>imagen</key>
 			<string>http://3.bp.blogspot.com/-wsjxRd2sA4k/U5X8jctLbYI/AAAAAAAADzA/I0KHGc0ZIo8/s1600/bandera+alemania.jpg</string>
 			<key>idCat</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>errores</key>
 			<integer>0</integer>
 			<key>correctas</key>
@@ -303,7 +303,7 @@
 			<key>imagen</key>
 			<string>https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRPkTkI3blbESHhaHRXnT3NEEezlIO1cVcV1JRNxMAgeOxltkXR</string>
 			<key>idCat</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>errores</key>
 			<integer>0</integer>
 			<key>correctas</key>
@@ -315,7 +315,7 @@
 			<key>imagen</key>
 			<string>http://www.banderas-mundo.es/data/flags/big/ca.png</string>
 			<key>idCat</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>errores</key>
 			<integer>0</integer>
 			<key>correctas</key>
@@ -327,7 +327,7 @@
 			<key>imagen</key>
 			<string>http://st-listas.20minutos.es/images/2010-05/214843/2326489_640px.jpg?1272764176</string>
 			<key>idCat</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>errores</key>
 			<integer>0</integer>
 			<key>correctas</key>
@@ -339,7 +339,7 @@
 			<key>imagen</key>
 			<string>http://img2.wikia.nocookie.net/__cb20140717212724/watch-dogs/es/images/2/29/Bandera_M%C3%A9xico.jpg</string>
 			<key>idCat</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>errores</key>
 			<integer>0</integer>
 			<key>correctas</key>
