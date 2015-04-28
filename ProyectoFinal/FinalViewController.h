@@ -18,6 +18,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *lbGanoPerdio;
 
 @property(strong,nonatomic) id <EliminarVistas> delegado;
+- (IBAction)volverJugar:(id)sender;
+
 @property  Boolean resultadoJugada;
 
 @end

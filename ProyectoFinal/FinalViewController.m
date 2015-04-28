@@ -48,4 +48,7 @@
  }
  */
 
+- (IBAction)volverJugar:(id)sender {
+    [self.delegado quitarVistas];
+}
 @end

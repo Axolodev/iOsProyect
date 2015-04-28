@@ -79,12 +79,7 @@
 
 
  #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
-     
      if([[segue identifier] isEqualToString:@"idJugar"]){
          JugarViewController *jvc = [segue destinationViewController];
          long reng1 = [self.picker selectedRowInComponent: 0];
@@ -106,6 +101,9 @@
  }
 
 -(void) quitarVistas{
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
     
     
 }
