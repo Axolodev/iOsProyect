@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSString *stCategoria;
 @property (nonatomic, retain) IBOutletCollection(UIButton) NSMutableArray *arregloBotones;
 
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
 
 @property (nonatomic, strong) NSString *stPalabraAAdivinar;
 @property (strong, nonatomic) IBOutlet UITextField *tfPalabraAdivinada;

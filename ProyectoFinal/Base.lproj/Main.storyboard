@@ -134,9 +134,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bMB-iR-okp">
-                                <rect key="frame" x="48" y="38" width="225" height="253"/>
-                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MUd-LZ-Hf1">
                                 <rect key="frame" x="16" y="305" width="288" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -172,6 +169,9 @@
                                     <segue destination="1En-Un-E18" kind="presentation" identifier="segueFinal" id="1Ff-vm-zYK"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bMB-iR-okp">
+                                <rect key="frame" x="42" y="37" width="262" height="253"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -179,6 +179,7 @@
                     <connections>
                         <outlet property="buEliminarLetra" destination="lTz-CA-XUm" id="clx-bm-biW"/>
                         <outlet property="buMostrarLetra" destination="rYW-lP-M7s" id="Sbl-yA-q1C"/>
+                        <outlet property="imageView" destination="bMB-iR-okp" id="VUS-AN-Pby"/>
                         <outlet property="tfPalabraAdivinada" destination="MUd-LZ-Hf1" id="sGB-gC-f8Q"/>
                     </connections>
                 </viewController>

@@ -15,25 +15,28 @@
 @property const NSInteger SPACEBETWEENBUTTONS;
 @property const NSInteger STARTINGY;
 @property const NSInteger STARTINGX;
-
+@property NSInteger indice;
 @end
 
 @implementation JugarViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.BUTTONHEIGHT = 45;
-    self.BUTTONWIDTH = 45;
-    self.SPACEBETWEENBUTTONS = 10;
-    self.STARTINGX = 50;
+    
+    [self filtrarPalabrasDeDiccionario];
+    unsigned long totalWords = self.diccionarioPalabras.count;
+    self.BUTTONHEIGHT = 30;
+    self.BUTTONWIDTH = 30;
+    self.SPACEBETWEENBUTTONS = 7;
+    self.STARTINGX = 20;
     self.STARTINGY = 500;
     self.tfPalabraAdivinada.hidden = true;
-    self.stPalabraAAdivinar = @"word";
     if ([self.stDificultad integerValue] == 3) {
         self.buEliminarLetra.hidden = YES;
         self.buMostrarLetra.hidden = YES;
     }
-    [self filtrarPalabrasDeDiccionario];
+    self.stPalabraAAdivinar = [self seleccionaPalabraParaJuego:totalWords];
+    [self cargaImagen];
     [self initTiles];
 }
 - (void)viewDidUnload
@@ -72,7 +75,19 @@
     *c = (char) (arc4random_uniform(26) + 'a');
     return c;
 }
+-(NSString *) seleccionaPalabraParaJuego: (unsigned long) totalWords{
+    
+    self.indice =  [self getRandomNumberBetween:0 to:(int) totalWords];
+    return[[self.diccionarioPalabras objectAtIndex:self.indice] objectForKey:@"palabra"];
+}
 
+-(void) cargaImagen{
+    
+    NSString *stringUrl =[[self.diccionarioPalabras objectAtIndex:self.indice] objectForKey:@"imagen"];
+    NSURL *nsurl = [NSURL URLWithString: stringUrl ];
+    NSData *data = [[NSData alloc] initWithContentsOfURL: nsurl];
+    self.imageView.image = [UIImage imageWithData: data];
+}
 -(void) randomCharBotton: (NSInteger) totalButton{
     
     NSInteger posRandom;
