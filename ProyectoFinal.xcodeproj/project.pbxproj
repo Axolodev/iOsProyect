@@ -15,6 +15,8 @@
 		FB116BC51AE02CBE00040F3E /* FinalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB116BBF1AE02CBE00040F3E /* FinalViewController.m */; };
 		FB116BC61AE02CBE00040F3E /* JugarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB116BC01AE02CBE00040F3E /* JugarViewController.m */; };
 		FB116BC71AE02CBE00040F3E /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB116BC11AE02CBE00040F3E /* Property List.plist */; };
+		FB185E841AF2E28D006F3518 /* images.png in Resources */ = {isa = PBXBuildFile; fileRef = FB185E831AF2E28D006F3518 /* images.png */; };
+		FB185E861AF2E298006F3518 /* Twitter_logo_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = FB185E851AF2E298006F3518 /* Twitter_logo_blue.png */; };
 		FB5BDF9B1AE150760001F60E /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5BDF9A1AE150760001F60E /* InfoViewController.m */; };
 		FB8284191AE02D24003B518A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB8284131AE02D24003B518A /* Main.storyboard */; };
 		FB82841A1AE02D24003B518A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8284171AE02D24003B518A /* ViewController.m */; };
@@ -45,6 +47,8 @@
 		FB116BBF1AE02CBE00040F3E /* FinalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinalViewController.m; sourceTree = "<group>"; };
 		FB116BC01AE02CBE00040F3E /* JugarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JugarViewController.m; sourceTree = "<group>"; };
 		FB116BC11AE02CBE00040F3E /* Property List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Property List.plist"; path = "ProyectoFinal/Property List.plist"; sourceTree = "<group>"; };
+		FB185E831AF2E28D006F3518 /* images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = images.png; sourceTree = "<group>"; };
+		FB185E851AF2E298006F3518 /* Twitter_logo_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Twitter_logo_blue.png; sourceTree = "<group>"; };
 		FB5BDF991AE150760001F60E /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		FB5BDF9A1AE150760001F60E /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		FB8284141AE02D24003B518A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
@@ -94,11 +98,13 @@
 			isa = PBXGroup;
 			children = (
 				FB116BBC1AE02CBE00040F3E /* AppDelegate.h */,
+				FB185E831AF2E28D006F3518 /* images.png */,
 				FB116BBD1AE02CBE00040F3E /* AppDelegate.m */,
 				FB116BBE1AE02CBE00040F3E /* FinalViewController.h */,
 				FB116BBF1AE02CBE00040F3E /* FinalViewController.m */,
 				FB8284131AE02D24003B518A /* Main.storyboard */,
 				FB5BDF991AE150760001F60E /* InfoViewController.h */,
+				FB185E851AF2E298006F3518 /* Twitter_logo_blue.png */,
 				FB5BDF9A1AE150760001F60E /* InfoViewController.m */,
 				FB116BC01AE02CBE00040F3E /* JugarViewController.m */,
 				FB8284151AE02D24003B518A /* JugarViewController.h */,
@@ -218,6 +224,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB8284191AE02D24003B518A /* Main.storyboard in Resources */,
+				FB185E841AF2E28D006F3518 /* images.png in Resources */,
+				FB185E861AF2E298006F3518 /* Twitter_logo_blue.png in Resources */,
 				FB116BC71AE02CBE00040F3E /* Property List.plist in Resources */,
 				FB116BA71AE02C5200040F3E /* LaunchScreen.xib in Resources */,
 				FB116BA41AE02C5200040F3E /* Images.xcassets in Resources */,

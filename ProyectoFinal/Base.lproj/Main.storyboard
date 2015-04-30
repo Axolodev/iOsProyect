@@ -256,6 +256,12 @@
                                     <action selector="compartirTwitter:" destination="1En-Un-E18" eventType="touchUpInside" id="Heo-CG-s4E"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="images.png" translatesAutoresizingMaskIntoConstraints="NO" id="Y9r-j8-JXq">
+                                <rect key="frame" x="32" y="185" width="29" height="40"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Twitter_logo_blue.png" translatesAutoresizingMaskIntoConstraints="NO" id="TmO-Um-v6L">
+                                <rect key="frame" x="32" y="248" width="40" height="39"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.97964693540000003" green="1" blue="0.84592061740000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -269,4 +275,8 @@
             <point key="canvasLocation" x="1248" y="466"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Twitter_logo_blue.png" width="1139" height="926"/>
+        <image name="images.png" width="132" height="132"/>
+    </resources>
 </document>
