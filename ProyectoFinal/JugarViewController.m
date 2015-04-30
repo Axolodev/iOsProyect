@@ -25,7 +25,7 @@
     [super viewDidLoad];
     
     [self filtrarPalabrasDeDiccionario];
-    unsigned long totalWords = self.diccionarioPalabras.count;
+    
     self.BUTTONHEIGHT = 30;
     self.BUTTONWIDTH = 30;
     self.SPACEBETWEENBUTTONS = 7;
@@ -37,24 +37,28 @@
         self.buMostrarLetra.hidden = YES;
     }
     self.score = 0;
-    self.stPalabraAAdivinar = [self seleccionaPalabraParaJuego:totalWords];
-    [self cargaImagen];
-    [self initTiles];
+    [self jugar];
 }
 
--(void) volverJugar{
-    for (UIButton *b in _arregloBotonesRespuesta) {
-        [b removeFromSuperview];
-    }
-    
-    for (UIButton *b in _arregloBotones) {
-        [b removeFromSuperview];
-    }
-    
+-(void) jugar{
+    [self cargaImagen];
     unsigned long totalWords = self.diccionarioPalabras.count;
     self.stPalabraAAdivinar = [self seleccionaPalabraParaJuego:totalWords];
+    _stPalabraAAdivinar = [_stPalabraAAdivinar lowercaseString];
+    if([_stDificultad integerValue] != 3){
+        for (UIButton *b in _arregloBotonesRespuesta) {
+            [b removeFromSuperview];
+        }
+        for (UIButton *b in _arregloBotones) {
+            [b removeFromSuperview];
+        }
+        [self initTiles];
+    } else {
+        _tfPalabraAdivinada.hidden = false;
+        _tfPalabraAdivinada.text = @"";
+    }
+    
     [self cargaImagen];
-    [self initTiles];
 }
 
 - (void)viewDidUnload
@@ -81,9 +85,6 @@
         }
     }
     
-    for(unsigned long i = 0 ; i < l ; i++){
-        NSLog(@"%@", [[self.diccionarioPalabras objectAtIndex:i] objectForKey:@"palabra"] );
-    }
 }
 -(int)getRandomNumberBetween:(int)from to:(int)to {
     return (int)from + arc4random() % (to-from+1);
@@ -114,10 +115,10 @@
     UIButton *boton;
     char *tituloBoton;
     char *caracter;
-
+    
     
     while(pos < lengthWord){
-    
+        
         // generar numero random de 0 a numero de botones
         posRandom = [self getRandomNumberBetween:0 to:(int)totalButton-1];
         // tomar el boton
@@ -130,8 +131,7 @@
             // se hace un substring de la palabra, tomando un caracter
             caracter = (char* ) [[self.stPalabraAAdivinar substringWithRange:NSMakeRange(pos,1)] UTF8String];
             [boton setTitle: [NSString stringWithFormat:@"%c",*caracter]  forState:UIControlStateNormal];
-            NSLog(@"1: %c", *caracter);
-        } // de otro modo
+            } // de otro modo
         else{
             // se busca otro boton generando numeros random
             while(*tituloBoton <= '0'  && *tituloBoton >= '9'){
@@ -141,7 +141,6 @@
             }
             caracter = (char* ) [[self.stPalabraAAdivinar substringWithRange:NSMakeRange(pos,1)] UTF8String];
             [boton setTitle: [NSString stringWithFormat:@"%c",*caracter]  forState:UIControlStateNormal];
-            NSLog(@"2: %c", *caracter);
         }
         
         pos++;
@@ -153,7 +152,6 @@
         tituloBoton =(char*)[boton.titleLabel.text UTF8String];
         
         if((*tituloBoton >= '0' ) && (*tituloBoton <= '9')){
-            NSLog(@"%s\t%@", tituloBoton, boton.titleLabel.text );
             caracter = [self generateRandomChar];
             [[self.arregloBotones objectAtIndex:j] setTitle: [NSString stringWithFormat:@"%c",*caracter]  forState:UIControlStateNormal];
         }
@@ -166,7 +164,7 @@
     self.arregloBotones = [[NSMutableArray alloc] initWithCapacity:numberOfButtons];
     self.arregloBotonesRespuesta = [[NSMutableArray alloc] initWithCapacity:numberOfButtons];
     NSInteger buttonsInUpperRow = numberOfButtons / 2, buttonsInLowerRow = numberOfButtons - buttonsInUpperRow;
-  
+    
     
     for (int count = 0; count < buttonsInUpperRow; count++)
     {
@@ -183,7 +181,7 @@
     for (int count = 0; count < buttonsInLowerRow; count++)
     {
         UIButton *b = [[UIButton alloc] initWithFrame:CGRectMake(self.STARTINGX + (self.SPACEBETWEENBUTTONS + self.BUTTONWIDTH) * count, self.STARTINGY + self.BUTTONHEIGHT + self.SPACEBETWEENBUTTONS, self.BUTTONWIDTH, self.BUTTONWIDTH)];
-        [b setTitle:[NSString stringWithFormat:@"%li",count+1 + buttonsInUpperRow] forState:UIControlStateNormal];
+        [b setTitle:[NSString stringWithFormat:@"%d",count+1 + buttonsInUpperRow] forState:UIControlStateNormal];
         [b setTag:count];
         [b setHidden:NO];
         [b addTarget:self action:@selector(letraDeBancoPresionada:) forControlEvents:UIControlEventTouchUpInside];
@@ -215,7 +213,7 @@
 
 
 
-- (IBAction)letraDeBancoPresionada:(id)sender {    
+- (IBAction)letraDeBancoPresionada:(id)sender {
     UIButton *button = (UIButton *) sender;
     
     if (button.isEnabled) {
@@ -230,22 +228,22 @@
             }
         }
     }
-  
+    
     
 }
 
 - (IBAction)letraDeRespuestaPresionada:(id)sender{
     UIButton *button = (UIButton * ) sender;
     NSString *titulo = button.currentTitle;
-    
-    for (UIButton *bu in self.arregloBotones){
-        if (bu.isHidden){
-            [bu setTitle:titulo forState:UIControlStateNormal];
-            bu.hidden = false;
-            break;
+    if (![titulo isEqualToString:@""]){
+        for (UIButton *bu in self.arregloBotones){
+            if (bu.isHidden){
+                [bu setTitle:titulo forState:UIControlStateNormal];
+                bu.hidden = false;
+                break;
+            }
         }
     }
-    
     [button setTitle:@"" forState:UIControlStateNormal];
 }
 
@@ -263,19 +261,19 @@
 
 
 
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-  
-      if([[segue identifier] isEqualToString:@"segueFinal"]){
-          FinalViewController*fvc = [segue destinationViewController];
-          fvc.delegado = self.vc;
-          NSString *wordCheck = @"";
-          for (UIButton *bu in self.arregloBotonesRespuesta) {
-              wordCheck = [NSString stringWithFormat:@"%@%@", wordCheck, bu.titleLabel.text];
-          }
-          fvc.resultadoJugada = [wordCheck isEqualToString:self.stPalabraAAdivinar];
-          fvc.score2 = self.score;
-      }
- }
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if([[segue identifier] isEqualToString:@"segueFinal"]){
+        FinalViewController*fvc = [segue destinationViewController];
+        fvc.delegado = self.vc;
+        NSString *wordCheck = @"";
+        for (UIButton *bu in self.arregloBotonesRespuesta) {
+            wordCheck = [NSString stringWithFormat:@"%@%@", wordCheck, bu.titleLabel.text];
+        }
+        fvc.resultadoJugada = [wordCheck isEqualToString:self.stPalabraAAdivinar];
+        fvc.score2 = self.score;
+    }
+}
 
 
 
@@ -301,7 +299,7 @@
 
 - (IBAction)bupMostrarLetra:(id)sender {
     int ctr = 0;
-
+    
     for (UIButton *bu in self.arregloBotonesRespuesta){
         if (bu.isEnabled && ![[self.stPalabraAAdivinar substringWithRange:NSMakeRange(ctr, 1)] isEqualToString:bu.currentTitle]){
             [bu setTitle:
@@ -318,13 +316,19 @@
 - (IBAction)botonPrueba:(id)sender {
     
     NSString *wordCheck = @"";
-    for (UIButton *bu in self.arregloBotonesRespuesta) {
-        wordCheck = [NSString stringWithFormat:@"%@%@", wordCheck, bu.titleLabel.text];
+    if ([_stDificultad integerValue] != 3) {
+        for (UIButton *bu in self.arregloBotonesRespuesta) {
+            wordCheck = [NSString stringWithFormat:@"%@%@", wordCheck, bu.titleLabel.text];
+        }
+    } else {
+        wordCheck = [_tfPalabraAdivinada.text lowercaseString];
+        NSLog (@"'%@'\n'%@'", wordCheck, _stPalabraAAdivinar);
     }
+    
     
     if([wordCheck isEqualToString:self.stPalabraAAdivinar]){
         self.score=self.score+1;
-        [self volverJugar];
+        [self jugar];
     }
     else{
         NSString *mensaje = [ [ NSString alloc ] initWithFormat: @"Intenta de nuevo"];
