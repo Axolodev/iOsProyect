@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
@@ -22,9 +22,18 @@
                                 <color key="textColor" red="0.60000002384185791" green="0.40000000596046448" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nwB-3t-hDK">
+                                <rect key="frame" x="29" y="129" width="283" height="189"/>
+                                <color key="backgroundColor" red="0.97964693540000003" green="1" blue="0.84592061740000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">En este juego deberás adivinar la palabra que mejor represente la imagen que será presentada. El juego te ofrece dos pistas: te puede dar una letra de la palabra o te puede quitar una de las letras del banco de letras que tienes para formar la palabra. </string>
+                                <color key="textColor" red="0.60000002384185791" green="0.40000000596046448" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bjn-vF-3Vb">
-                                <rect key="frame" x="112" y="486" width="97" height="30"/>
+                                <rect key="frame" x="112" y="326" width="97" height="30"/>
                                 <state key="normal" title="Volver a menu">
+                                    <color key="titleColor" red="1" green="0.2208034529" blue="0.3369989182" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -32,7 +41,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.78371636979762849" blue="0.51662326382951385" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.97964693540000003" green="1" blue="0.84592061740000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c2F-5c-QCx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -52,33 +61,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Br-O3-iap">
+                                <rect key="frame" x="290" y="28" width="22" height="22"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="kRP-KX-gyb" kind="presentation" id="X2k-13-cVy"/>
+                                </connections>
+                            </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UHB-Gw-fhG">
-                                <rect key="frame" x="0.0" y="134" width="320" height="162"/>
+                                <rect key="frame" x="0.0" y="58" width="320" height="162"/>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Categoría:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRz-4G-EBy">
-                                <rect key="frame" x="54" y="339" width="80" height="21"/>
+                                <rect key="frame" x="54" y="263" width="80" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dificultad:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0o-fA-MzD">
-                                <rect key="frame" x="54" y="405" width="77" height="21"/>
+                                <rect key="frame" x="54" y="329" width="77" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aDo-CI-RFu">
-                                <rect key="frame" x="169" y="339" width="97" height="30"/>
+                                <rect key="frame" x="169" y="263" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0y1-wl-kie">
-                                <rect key="frame" x="169" y="405" width="97" height="30"/>
+                                <rect key="frame" x="169" y="329" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nV2-mg-fDZ">
-                                <rect key="frame" x="114" y="481" width="93" height="30"/>
+                                <rect key="frame" x="114" y="405" width="93" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="¡Jugar!">
                                     <color key="titleColor" red="1" green="0.22080345288512893" blue="0.33699891817945971" alpha="1" colorSpace="calibratedRGB"/>
@@ -89,27 +107,18 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Categoría" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7h-QX-bgw">
-                                <rect key="frame" x="27" y="134" width="75" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="27" y="58" width="82" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Br-O3-iap">
-                                <rect key="frame" x="16" y="52" width="22" height="22"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="kRP-KX-gyb" kind="presentation" id="X2k-13-cVy"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dificultad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UzQ-pl-LAg">
-                                <rect key="frame" x="239" y="134" width="73" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="230" y="58" width="82" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.78371636980000003" blue="0.51662326380000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.97964693538493408" green="1" blue="0.84592061744338443" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -135,13 +144,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MUd-LZ-Hf1">
-                                <rect key="frame" x="16" y="305" width="288" height="30"/>
+                                <rect key="frame" x="16" y="255" width="288" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOK-rb-JdO">
+                                <rect key="frame" x="245" y="434" width="59" height="30"/>
+                                <state key="normal" title="Terminar">
+                                    <color key="titleColor" red="1" green="0.2208034529" blue="0.3369989182" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="1En-Un-E18" kind="presentation" identifier="segueFinal" id="1Ff-vm-zYK"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bMB-iR-okp">
+                                <rect key="frame" x="49" y="42" width="223" height="195"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="03K-QO-gMF">
+                                <rect key="frame" x="218" y="396" width="86" height="30"/>
+                                <state key="normal" title="Otra palabra">
+                                    <color key="titleColor" red="1" green="0.2208034529" blue="0.3369989182" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="botonPrueba:" destination="cQc-ge-8h5" eventType="touchUpInside" id="Ddn-qL-GyU"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYW-lP-M7s">
-                                <rect key="frame" x="274" y="441" width="30" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.61498070159999996" blue="0.77184453740000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="279" y="340" width="30" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.77290553660000005" blue="0.51975596329999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="0.2208034529" blue="0.3369989182" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Mo">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -150,8 +183,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTz-CA-XUm">
-                                <rect key="frame" x="274" y="394" width="30" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.61498070159999996" blue="0.77184453740000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="279" y="293" width="30" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.77290553655079741" blue="0.5197559632971972" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="0.2208034529" blue="0.3369989182" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="El">
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -159,21 +193,8 @@
                                     <action selector="bupEliminarLetra:" destination="cQc-ge-8h5" eventType="touchUpInside" id="ZZS-rK-OxQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOK-rb-JdO">
-                                <rect key="frame" x="258" y="530" width="49" height="30"/>
-                                <state key="normal" title="Prueba">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="botonPrueba:" destination="cQc-ge-8h5" eventType="touchUpInside" id="D7z-cC-sZK"/>
-                                    <segue destination="1En-Un-E18" kind="presentation" identifier="segueFinal" id="1Ff-vm-zYK"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bMB-iR-okp">
-                                <rect key="frame" x="42" y="37" width="262" height="253"/>
-                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.97964693540000003" green="1" blue="0.84592061740000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -200,20 +221,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJf-GK-Q6W">
-                                <rect key="frame" x="52" y="34" width="217" height="284"/>
+                                <rect key="frame" x="52" y="34" width="217" height="143"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94V-fO-W0x">
-                                <rect key="frame" x="79" y="343" width="162" height="30"/>
+                                <rect key="frame" x="79" y="190" width="162" height="30"/>
                                 <state key="normal" title="Compartir en Facebook">
+                                    <color key="titleColor" red="1" green="0.2208034529" blue="0.3369989182" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJg-vQ-66Y">
+                                <rect key="frame" x="90" y="253" width="140" height="30"/>
+                                <state key="normal" title="Compartir en Twitter">
+                                    <color key="titleColor" red="1" green="0.2208034529" blue="0.3369989182" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yN-YK-V4L">
-                                <rect key="frame" x="132" y="403" width="93" height="30"/>
-                                <state key="normal" title="Volver a jugar">
+                                <rect key="frame" x="109" y="314" width="103" height="30"/>
+                                <state key="normal" title="Menu Principal">
+                                    <color key="titleColor" red="1" green="0.2208034529" blue="0.3369989182" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -221,7 +251,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.85639671214296942" green="1" blue="0.94193482699580666" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.97964693540000003" green="1" blue="0.84592061740000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>

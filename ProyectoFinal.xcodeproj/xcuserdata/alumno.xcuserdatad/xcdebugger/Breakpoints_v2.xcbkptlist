@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProyectoFinal/JugarViewController.m"
-            timestampString = "451952829.881336"
+            timestampString = "452110957.345316"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
+            startingLineNumber = "211"
+            endingLineNumber = "211"
             landmarkName = "-initTiles"
             landmarkType = "5">
          </BreakpointContent>

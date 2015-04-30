@@ -22,7 +22,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *buEliminarLetra;
 @property(strong,nonatomic) ViewController *vc;
 
-@property (nonatomic, retain) IBOutletCollection(UIButton) NSMutableArray *arregloBotonesRespuesta;
+@property (atomic, retain) IBOutletCollection(UIButton) NSMutableArray *arregloBotonesRespuesta;
 
 
 - (IBAction)bupEliminarLetra:(id)sender;
@@ -31,5 +31,6 @@
 @property NSInteger idCategoria;
 @property (strong, nonatomic) NSMutableArray *diccionarioPalabras;
 
+- (IBAction)botonPrueba:(id)sender;
 
 @end

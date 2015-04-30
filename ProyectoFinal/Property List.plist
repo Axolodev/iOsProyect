@@ -253,7 +253,7 @@
 		</dict>
 		<dict>
 			<key>imagen</key>
-			<string>http://banderasdelmundo.info/wp-content/uploads/2013/04/bandera-de-guatemala.jpg</string>
+			<string>data:image/png;base64,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</string>
 			<key>idCat</key>
 			<integer>1</integer>
 			<key>errores</key>
@@ -261,7 +261,7 @@
 			<key>correctas</key>
 			<integer>0</integer>
 			<key>palabra</key>
-			<string>Guatemala</string>
+			<string>China</string>
 		</dict>
 		<dict>
 			<key>imagen</key>

@@ -25,12 +25,9 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if(self.resultadoJugada){
-        self.lbGanoPerdio.text = @"Ganaste!!";
-    }
-    else{
-        self.lbGanoPerdio.text = @"Perdiste!!";
-    }
+    
+        self.lbGanoPerdio.text = [NSString stringWithFormat:@"Score: %li",self.score2];
+   
 }
 
 - (void)didReceiveMemoryWarning {

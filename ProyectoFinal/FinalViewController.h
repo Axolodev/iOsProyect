@@ -21,5 +21,6 @@
 - (IBAction)volverJugar:(id)sender;
 
 @property  Boolean resultadoJugada;
+@property NSInteger score2; 
 
 @end

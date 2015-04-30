@@ -16,6 +16,7 @@
 @property const NSInteger STARTINGY;
 @property const NSInteger STARTINGX;
 @property NSInteger indice;
+@property NSInteger score;
 @end
 
 @implementation JugarViewController
@@ -29,16 +30,33 @@
     self.BUTTONWIDTH = 30;
     self.SPACEBETWEENBUTTONS = 7;
     self.STARTINGX = 20;
-    self.STARTINGY = 500;
+    self.STARTINGY = 300;
     self.tfPalabraAdivinada.hidden = true;
     if ([self.stDificultad integerValue] == 3) {
         self.buEliminarLetra.hidden = YES;
         self.buMostrarLetra.hidden = YES;
     }
+    self.score = 0;
     self.stPalabraAAdivinar = [self seleccionaPalabraParaJuego:totalWords];
     [self cargaImagen];
     [self initTiles];
 }
+
+-(void) volverJugar{
+    for (UIButton *b in _arregloBotonesRespuesta) {
+        [b removeFromSuperview];
+    }
+    
+    for (UIButton *b in _arregloBotones) {
+        [b removeFromSuperview];
+    }
+    
+    unsigned long totalWords = self.diccionarioPalabras.count;
+    self.stPalabraAAdivinar = [self seleccionaPalabraParaJuego:totalWords];
+    [self cargaImagen];
+    [self initTiles];
+}
+
 - (void)viewDidUnload
 {
     [super viewDidUnload];
@@ -77,7 +95,7 @@
 }
 -(NSString *) seleccionaPalabraParaJuego: (unsigned long) totalWords{
     
-    self.indice =  [self getRandomNumberBetween:0 to:(int) totalWords];
+    self.indice =  [self getRandomNumberBetween:0 to:(int) totalWords - 1];
     return[[self.diccionarioPalabras objectAtIndex:self.indice] objectForKey:@"palabra"];
 }
 
@@ -178,7 +196,7 @@
     if(numberOfButtons != 0){
         for (int count = 0; count < self.stPalabraAAdivinar.length; count++)
         {
-            UIButton *b = [[UIButton alloc] initWithFrame:CGRectMake(self.STARTINGX + (self.SPACEBETWEENBUTTONS + self.BUTTONWIDTH) * count, 350, self.BUTTONWIDTH, self.BUTTONHEIGHT)];
+            UIButton *b = [[UIButton alloc] initWithFrame:CGRectMake(self.STARTINGX + (self.SPACEBETWEENBUTTONS + self.BUTTONWIDTH) * count, 250, self.BUTTONWIDTH, self.BUTTONHEIGHT)];
             [b setTitle:[NSString stringWithFormat:@""] forState:UIControlStateNormal];
             [b setTag:count];
             [b setHidden:NO];
@@ -255,6 +273,7 @@
               wordCheck = [NSString stringWithFormat:@"%@%@", wordCheck, bu.titleLabel.text];
           }
           fvc.resultadoJugada = [wordCheck isEqualToString:self.stPalabraAAdivinar];
+          fvc.score2 = self.score;
       }
  }
 
@@ -295,18 +314,26 @@
     
 }
 
--(NSString*) elegirPalabraPList{
-    NSString *palabra;
-    
-    
-    
-    
-    
-    return palabra;
-}
+
 - (IBAction)botonPrueba:(id)sender {
     
-
+    NSString *wordCheck = @"";
+    for (UIButton *bu in self.arregloBotonesRespuesta) {
+        wordCheck = [NSString stringWithFormat:@"%@%@", wordCheck, bu.titleLabel.text];
+    }
+    
+    if([wordCheck isEqualToString:self.stPalabraAAdivinar]){
+        self.score=self.score+1;
+        [self volverJugar];
+    }
+    else{
+        NSString *mensaje = [ [ NSString alloc ] initWithFormat: @"Intenta de nuevo"];
+        UIAlertView *alerta = [ [ UIAlertView alloc ] initWithTitle: @"Palabra incorrecta" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alerta show];
+        
+    }
+    
+    
 }
 
 @end
