@@ -26,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-        self.lbGanoPerdio.text = [NSString stringWithFormat:@"Score: %li",self.score2];
+        self.lbGanoPerdio.text = [NSString stringWithFormat:@"Score: %li",(long)self.score2];
    
 }
 
@@ -49,8 +49,50 @@
     [self.delegado quitarVistas];
 }
 - (IBAction)compartirFB:(id)sender {
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
+    {
+        SLComposeViewController *fbComposer = [SLComposeViewController composeViewControllerForServiceType: SLServiceTypeFacebook];
+        [fbComposer setInitialText:[NSString stringWithFormat:@"Guess the word! Score: %li",(long)self.score2]];
+        [self presentViewController:fbComposer animated:YES completion:nil];
+        
+    }
+    else {
+        UIAlertView *alertView = [[UIAlertView alloc]
+                                  initWithTitle:@"Facebook Error"
+                                  message:@"No tienes configurado tu servicio de Facebook en tu dispositivo o, no estás conectado a internet"
+                                  delegate:self
+                                  cancelButtonTitle:@"OK"
+                                  otherButtonTitles: nil];
+        [alertView show];
+        
+    }
+
+    
 }
 
 - (IBAction)compartirTwitter:(id)sender {
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+    {
+        SLComposeViewController *tweetController = [SLComposeViewController
+                                                    composeViewControllerForServiceType: SLServiceTypeTwitter];
+        
+        //set the initial text message
+        [tweetController setInitialText:[NSString stringWithFormat:@"Guess the word! Score: %li",(long)self.score2]];
+     
+        
+        //present the controller to the user
+        [self presentViewController:tweetController animated:YES completion:nil];
+    }
+    else{
+        UIAlertView *alertView = [[UIAlertView alloc]
+                                  initWithTitle:@"twitter Error"
+                                  message:@"No tienes configurado tu cuenta de Twitter en tu dispositivo o no estás conectado a internet."
+                                  delegate:self
+                                  cancelButtonTitle:@"OK"
+                                  otherButtonTitles: nil];
+        [alertView show];
+        
+    }
+
 }
 @end
