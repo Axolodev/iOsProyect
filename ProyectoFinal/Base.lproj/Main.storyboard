@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
@@ -232,13 +232,9 @@
                                     <color key="titleColor" red="1" green="0.2208034529" blue="0.3369989182" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJg-vQ-66Y">
-                                <rect key="frame" x="90" y="253" width="140" height="30"/>
-                                <state key="normal" title="Compartir en Twitter">
-                                    <color key="titleColor" red="1" green="0.2208034529" blue="0.3369989182" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <connections>
+                                    <action selector="compartirFB:" destination="1En-Un-E18" eventType="touchUpInside" id="RGX-LK-IaD"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yN-YK-V4L">
                                 <rect key="frame" x="109" y="314" width="103" height="30"/>
@@ -248,6 +244,16 @@
                                 </state>
                                 <connections>
                                     <action selector="volverJugar:" destination="1En-Un-E18" eventType="touchUpInside" id="ctX-C8-UlU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJg-vQ-66Y">
+                                <rect key="frame" x="90" y="253" width="140" height="30"/>
+                                <state key="normal" title="Compartir en Twitter">
+                                    <color key="titleColor" red="1" green="0.2208034529" blue="0.3369989182" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="compartirTwitter:" destination="1En-Un-E18" eventType="touchUpInside" id="Heo-CG-s4E"/>
                                 </connections>
                             </button>
                         </subviews>

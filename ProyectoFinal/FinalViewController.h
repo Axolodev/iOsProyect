@@ -21,6 +21,11 @@
 - (IBAction)volverJugar:(id)sender;
 
 @property  Boolean resultadoJugada;
-@property NSInteger score2; 
+@property NSInteger score2;
+
+- (IBAction)compartirFB:(id)sender;
+
+- (IBAction)compartirTwitter:(id)sender;
+
 
 @end

@@ -48,4 +48,9 @@
 - (IBAction)volverJugar:(id)sender {
     [self.delegado quitarVistas];
 }
+- (IBAction)compartirFB:(id)sender {
+}
+
+- (IBAction)compartirTwitter:(id)sender {
+}
 @end
