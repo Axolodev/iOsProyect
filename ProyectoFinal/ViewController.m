@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+  
     NSString *pathList = [[NSBundle mainBundle] pathForResource:@"Property List" ofType:@"plist"];
     self.arregloPList = [[NSArray alloc] initWithContentsOfFile:pathList];
     
@@ -33,7 +33,7 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+  
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
@@ -49,11 +49,17 @@
     return 0;
     
 }
+
+/*
+ * Metodo utilizado para cambiar el valor del picker.
+*/
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:
 (NSInteger)row inComponent:(NSInteger)component{
     [self cambiaValorPicker];
 }
-
+/**
+ * Metodo invocado al presionar un boton de los caracteres del banco inferior de letras.
+ */
 -(void) cambiaValorPicker{
     long reng1 = [self.picker selectedRowInComponent: 0];
     long reng2 = [self.picker selectedRowInComponent: 1];
@@ -65,6 +71,9 @@
     self.tfDif.text = [NSString stringWithFormat:@"%@",valor2];
     self.tfCat.text = [NSString stringWithFormat:@"%@",valor1];
 }
+/**
+ * Metodo para seleccionar el componente del picker a mostrar.
+ */
 
 - (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
@@ -99,7 +108,9 @@
      }
      
  }
-
+/*
+ * Metodo del delegado para que la pantalla Final pueda regresar a la pantalla principal y reiniciar juego
+*/
 -(void) quitarVistas{
     
     [self dismissViewControllerAnimated:YES completion:nil];

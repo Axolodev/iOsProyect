@@ -31,6 +31,7 @@
     self.SPACEBETWEENBUTTONS = 7;
     self.STARTINGX = 20;
     self.STARTINGY = 300;
+    self.indice = -2;
     self.tfPalabraAdivinada.hidden = true;
     if ([self.stDificultad integerValue] == 3) {
         self.buEliminarLetra.hidden = YES;
@@ -38,27 +39,35 @@
     }
     self.score = 0;
     [self jugar];
+    
 }
 
+// Metodo utilizado para cargar la imagen y la palabra y borrar aquellas que ya hayan salido
+
 -(void) jugar{
-    [self cargaImagen];
-    unsigned long totalWords = self.diccionarioPalabras.count;
-    self.stPalabraAAdivinar = [self seleccionaPalabraParaJuego:totalWords];
-    _stPalabraAAdivinar = [_stPalabraAAdivinar lowercaseString];
-    if([_stDificultad integerValue] != 3){
-        for (UIButton *b in _arregloBotonesRespuesta) {
-            [b removeFromSuperview];
-        }
-        for (UIButton *b in _arregloBotones) {
-            [b removeFromSuperview];
-        }
-        [self initTiles];
-    } else {
-        _tfPalabraAdivinada.hidden = false;
-        _tfPalabraAdivinada.text = @"";
+    if (_indice != -2) {
+        [self.diccionarioPalabras removeObjectAtIndex:self.indice];
     }
+    unsigned long totalWords = self.diccionarioPalabras.count;
     
-    [self cargaImagen];
+    if (totalWords != 0) {
+        self.stPalabraAAdivinar = [self seleccionaPalabraParaJuego:totalWords];
+        _stPalabraAAdivinar = [_stPalabraAAdivinar lowercaseString];
+        if([_stDificultad integerValue] != 3){
+            for (UIButton *b in _arregloBotonesRespuesta) {
+                [b removeFromSuperview];
+            }
+            for (UIButton *b in _arregloBotones) {
+                [b removeFromSuperview];
+            }
+            [self initTiles];
+        } else {
+            _tfPalabraAdivinada.hidden = false;
+            _tfPalabraAdivinada.text = @"";
+        }
+        
+        [self cargaImagen];
+    }
 }
 
 - (void)viewDidUnload
@@ -66,11 +75,17 @@
     [super viewDidUnload];
 }
 
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+
+/**
+ * Metodo llamado al iniciar el juego. Elimina del diccionario recibido (con todas las palabras) aquellas palabras que no pertenecen
+ * a la categoria seleccionada por el usuario.
+ **/
 - (void) filtrarPalabrasDeDiccionario{
     unsigned long l = [self.diccionarioPalabras count];
     
@@ -86,6 +101,10 @@
     }
     
 }
+
+/**
+ * Metodo que genera un numero al azar entre "from" y "to".
+ **/
 -(int)getRandomNumberBetween:(int)from to:(int)to {
     return (int)from + arc4random() % (to-from+1);
 }
@@ -94,70 +113,73 @@
     *c = (char) (arc4random_uniform(26) + 'a');
     return c;
 }
+
+/**
+ * Metodo que selecciona una palabra al azar de las palabras ya filtradas.
+ */
 -(NSString *) seleccionaPalabraParaJuego: (unsigned long) totalWords{
     
     self.indice =  [self getRandomNumberBetween:0 to:(int) totalWords - 1];
-    return[[self.diccionarioPalabras objectAtIndex:self.indice] objectForKey:@"palabra"];
+    return [[self.diccionarioPalabras objectAtIndex:self.indice] objectForKey:@"palabra"];
 }
 
+/**
+ * Metodo que carga la imagen correspondiente a la palabra de la partida.
+ */
 -(void) cargaImagen{
-    
     NSString *stringUrl =[[self.diccionarioPalabras objectAtIndex:self.indice] objectForKey:@"imagen"];
     NSURL *nsurl = [NSURL URLWithString: stringUrl ];
     NSData *data = [[NSData alloc] initWithContentsOfURL: nsurl];
     self.imageView.image = [UIImage imageWithData: data];
 }
+
+/**
+ * Metodo encargado de llenar los botones de los arreglos inferiores de caracteres pertenecientes a la palabra. Ademas, llena con caracteres random aquellos que quedan vacios.
+ */
 -(void) randomCharBotton: (NSInteger) totalButton{
-    
     NSInteger posRandom;
     int pos = 0;
     long lengthWord = self.stPalabraAAdivinar.length;
     UIButton *boton;
     char *tituloBoton;
-    char *caracter;
-    
-    
+    NSString *caracter;
+    char *caracter2;
     while(pos < lengthWord){
-        
-        // generar numero random de 0 a numero de botones
         posRandom = [self getRandomNumberBetween:0 to:(int)totalButton-1];
-        // tomar el boton
         boton = [self.arregloBotones objectAtIndex:posRandom];
-        // tomar titulo del boton
         tituloBoton = (char*) [boton.titleLabel.text UTF8String];
-        
-        // si el titulo es lo que se busca,
         if((*tituloBoton >= '0' ) && (*tituloBoton <= '9')){
-            // se hace un substring de la palabra, tomando un caracter
-            caracter = (char* ) [[self.stPalabraAAdivinar substringWithRange:NSMakeRange(pos,1)] UTF8String];
-            [boton setTitle: [NSString stringWithFormat:@"%c",*caracter]  forState:UIControlStateNormal];
-            } // de otro modo
+            caracter = [self.stPalabraAAdivinar substringWithRange:NSMakeRange(pos,1)] ;
+            [boton setTitle: caracter  forState:UIControlStateNormal];
+            pos++;
+        }
         else{
-            // se busca otro boton generando numeros random
             while(*tituloBoton <= '0'  && *tituloBoton >= '9'){
                 posRandom = [self getRandomNumberBetween:0 to:(int)totalButton-1];
                 boton = [self.arregloBotones objectAtIndex:posRandom];
                 tituloBoton = (char*)[boton.titleLabel.text UTF8String];
             }
-            caracter = (char* ) [[self.stPalabraAAdivinar substringWithRange:NSMakeRange(pos,1)] UTF8String];
-            [boton setTitle: [NSString stringWithFormat:@"%c",*caracter]  forState:UIControlStateNormal];
+            if((*tituloBoton >= '0' ) && (*tituloBoton <= '9')){
+                caracter = [self.stPalabraAAdivinar substringWithRange:NSMakeRange(pos,1)] ;
+                [boton setTitle: caracter  forState:UIControlStateNormal];
+                pos++;
+            }
         }
-        
-        pos++;
     }
-    
     for(int j = 0; j < totalButton; j++){
-        
         boton = [self.arregloBotones objectAtIndex:j];
         tituloBoton =(char*)[boton.titleLabel.text UTF8String];
-        
         if((*tituloBoton >= '0' ) && (*tituloBoton <= '9')){
-            caracter = [self generateRandomChar];
-            [[self.arregloBotones objectAtIndex:j] setTitle: [NSString stringWithFormat:@"%c",*caracter]  forState:UIControlStateNormal];
+            caracter2 = [self generateRandomChar];
+            [[self.arregloBotones objectAtIndex:j] setTitle: [NSString stringWithFormat:@"%c",*caracter2]  forState:UIControlStateNormal];
         }
     }
     
 }
+
+/*
+ * Metodo que crea los botones que se llenaran con los caracteres de la palabra a adivinar, y los botones de la respuesta.
+ */
 -(void)initTiles
 {
     NSInteger numberOfButtons = [self getNumberOfButtons:self.stPalabraAAdivinar];
@@ -212,7 +234,9 @@
 
 
 
-
+ /**
+  * Metodo invocado al presionar un boton de los caracteres del banco inferior de letras.
+  */
 - (IBAction)letraDeBancoPresionada:(id)sender {
     UIButton *button = (UIButton *) sender;
     
@@ -232,6 +256,9 @@
     
 }
 
+/**
+ * Metodo invocado al presionar un boton de los caracteres del banco de letras de la respuesta.
+ */
 - (IBAction)letraDeRespuestaPresionada:(id)sender{
     UIButton *button = (UIButton * ) sender;
     NSString *titulo = button.currentTitle;
@@ -248,7 +275,9 @@
 }
 
 
-
+/**
+ * Metodo que retorna el numero de botones que corresponde a la dificultad seleccionada por el usuario
+ */
 - (NSInteger) getNumberOfButtons: (NSString*) word{
     NSInteger val = [self.stDificultad integerValue];
     if(val == 1) {
@@ -262,21 +291,23 @@
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    if([[segue identifier] isEqualToString:@"segueFinal"]){
-        FinalViewController*fvc = [segue destinationViewController];
-        fvc.delegado = self.vc;
-        NSString *wordCheck = @"";
-        for (UIButton *bu in self.arregloBotonesRespuesta) {
-            wordCheck = [NSString stringWithFormat:@"%@%@", wordCheck, bu.titleLabel.text];
-        }
-        fvc.resultadoJugada = [wordCheck isEqualToString:self.stPalabraAAdivinar];
-        fvc.score2 = self.score;
+    FinalViewController*fvc = [segue destinationViewController];
+    fvc.delegado = self.vc;
+    NSString *wordCheck = @"";
+    for (UIButton *bu in self.arregloBotonesRespuesta) {
+        wordCheck = [NSString stringWithFormat:@"%@%@", wordCheck, bu.titleLabel.text];
     }
+    fvc.resultadoJugada = [wordCheck isEqualToString:self.stPalabraAAdivinar];
+    fvc.score2 = self.score;
 }
 
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender{
+    return ([identifier isEqualToString:@"segueFinal"]) || ([identifier isEqualToString: @"segueProbar"] && self.diccionarioPalabras.count == 0);
+}
 
-
+/**
+ * Metodo que elimina las letras del banco inferior al presionar el boton de pista.
+ */
 - (IBAction)bupEliminarLetra:(id)sender {
     NSString *helper = [NSString stringWithFormat:@"%@", self.stPalabraAAdivinar];
     NSRange r;
@@ -296,7 +327,9 @@
         }
     }
 }
-
+/**
+ * Metodo que "regala" una letra de la respuesta al usuario. No hay limite de letras regaladas.
+ */
 - (IBAction)bupMostrarLetra:(id)sender {
     int ctr = 0;
     
@@ -310,11 +343,13 @@
         ctr++;
     }
     
+    
 }
 
-
+/**
+ * Metodo de que revisa si la palabra de la respuesta es correcta o incorrecta.
+ */
 - (IBAction)botonPrueba:(id)sender {
-    
     NSString *wordCheck = @"";
     if ([_stDificultad integerValue] != 3) {
         for (UIButton *bu in self.arregloBotonesRespuesta) {
@@ -322,10 +357,7 @@
         }
     } else {
         wordCheck = [_tfPalabraAdivinada.text lowercaseString];
-        NSLog (@"'%@'\n'%@'", wordCheck, _stPalabraAAdivinar);
     }
-    
-    
     if([wordCheck isEqualToString:self.stPalabraAAdivinar]){
         self.score=self.score+1;
         [self jugar];
@@ -334,10 +366,9 @@
         NSString *mensaje = [ [ NSString alloc ] initWithFormat: @"Intenta de nuevo"];
         UIAlertView *alerta = [ [ UIAlertView alloc ] initWithTitle: @"Palabra incorrecta" message:mensaje delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alerta show];
-        
     }
-    
-    
 }
+
+
 
 @end

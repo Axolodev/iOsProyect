@@ -28,10 +28,6 @@
 			<string>http://www.monografias.com/trabajos82/huesos-craneo/image003.jpg</string>
 			<key>idCat</key>
 			<integer>2</integer>
-			<key>errores</key>
-			<integer>0</integer>
-			<key>correctas</key>
-			<integer>0</integer>
 			<key>palabra</key>
 			<string>esfenoides</string>
 		</dict>
@@ -40,10 +36,6 @@
 			<string>https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQv7vRHr43uPQnnJzHutN-cYxq0dugt9kfoMMWtYTPdAePpuAzg</string>
 			<key>idCat</key>
 			<integer>2</integer>
-			<key>errores</key>
-			<integer>0</integer>
-			<key>correctas</key>
-			<integer>0</integer>
 			<key>palabra</key>
 			<string>tabique</string>
 		</dict>
@@ -52,10 +44,6 @@
 			<string>http://psicoucab.tripod.com/expo/8/8.htm4.jpg</string>
 			<key>idCat</key>
 			<integer>2</integer>
-			<key>errores</key>
-			<integer>0</integer>
-			<key>correctas</key>
-			<integer>0</integer>
 			<key>palabra</key>
 			<string>sacro</string>
 		</dict>
@@ -64,10 +52,6 @@
 			<string>https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRem-bo4eeJtPZFzmWCq0eYi-FsEerIyRwOEh91W9YYycnasY7QYA</string>
 			<key>idCat</key>
 			<integer>2</integer>
-			<key>errores</key>
-			<integer>0</integer>
-			<key>correctas</key>
-			<integer>0</integer>
 			<key>palabra</key>
 			<string>radio</string>
 		</dict>
@@ -76,10 +60,6 @@
 			<string>https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQenAQ4IjI-RgDTMsgIHRdXsEkK6OJ6ID8N-Qc-9hrapkBSh-vM</string>
 			<key>idCat</key>
 			<integer>2</integer>
-			<key>errores</key>
-			<integer>0</integer>
-			<key>correctas</key>
-			<integer>0</integer>
 			<key>palabra</key>
 			<string>humero</string>
 		</dict>
@@ -88,10 +68,6 @@
 			<string>http://patentados.com/img/2005/articulacion-de-reemplazo-entre-metacarpiano-y-falange.png</string>
 			<key>idCat</key>
 			<integer>2</integer>
-			<key>errores</key>
-			<integer>0</integer>
-			<key>correctas</key>
-			<integer>0</integer>
 			<key>palabra</key>
 			<string>falange</string>
 		</dict>
@@ -100,10 +76,6 @@
 			<string>https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYa9Lg2GkyN2bB0ta04FiAEPOH4O8XAj5oOpHZcmDu7qvGUkpv</string>
 			<key>idCat</key>
 			<integer>2</integer>
-			<key>errores</key>
-			<integer>0</integer>
-			<key>correctas</key>
-			<integer>0</integer>
 			<key>palabra</key>
 			<string>tibia</string>
 		</dict>
@@ -112,10 +84,6 @@
 			<string>https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTlLvCF5gA2Oe8Wrip5-AUQp45JuU6xxSmBUg_gt1ImHCWrLsOFDg</string>
 			<key>idCat</key>
 			<integer>2</integer>
-			<key>errores</key>
-			<integer>0</integer>
-			<key>correctas</key>
-			<integer>0</integer>
 			<key>palabra</key>
 			<string>perone</string>
 		</dict>
@@ -124,10 +92,6 @@
 			<string>http://i944.photobucket.com/albums/ad290/gingerglamalgan/femur.jpg</string>
 			<key>idCat</key>
 			<integer>2</integer>
-			<key>errores</key>
-			<integer>0</integer>
-			<key>correctas</key>
-			<integer>0</integer>
 			<key>palabra</key>
 			<string>femur</string>
 		</dict>
@@ -136,10 +100,6 @@
 			<string>http://3mcollision.com/media/catalog/product/cache/5/image/9df78eab33525d08d6e5fb8d27136e95/s/t/striping_color-97-Medium-Dark-Gray.jpg</string>
 			<key>idCat</key>
 			<integer>3</integer>
-			<key>errores</key>
-			<integer>0</integer>
-			<key>correctas</key>
-			<integer>0</integer>
 			<key>palabra</key>
 			<string>gris</string>
 		</dict>
@@ -148,10 +108,6 @@
 			<string>http://significadodeloscolores.info/wp-content/uploads/2014/08/color-negro.png</string>
 			<key>idCat</key>
 			<integer>3</integer>
-			<key>errores</key>
-			<integer>0</integer>
-			<key>correctas</key>
-			<integer>0</integer>
 			<key>palabra</key>
 			<string>negro</string>
 		</dict>
@@ -160,10 +116,6 @@
 			<string>http://3mcollision.com/media/catalog/product/cache/5/image/9df78eab33525d08d6e5fb8d27136e95/s/t/striping_color-70-Brown-Metallic_1.jpg</string>
 			<key>idCat</key>
 			<integer>3</integer>
-			<key>errores</key>
-			<integer>0</integer>
-			<key>correctas</key>
-			<integer>0</integer>
 			<key>palabra</key>
 			<string>cafe</string>
 		</dict>
@@ -172,10 +124,6 @@
 			<string>http://st-listas.20minutos.es/images/2013-03/356473/3936175_640px.jpg?1362229995</string>
 			<key>idCat</key>
 			<integer>3</integer>
-			<key>errores</key>
-			<integer>0</integer>
-			<key>correctas</key>
-			<integer>0</integer>
 			<key>palabra</key>
 			<string>rosa</string>
 		</dict>
@@ -184,10 +132,6 @@
 			<string>http://f.tqn.com/y/arte/1/W/v/3/-/-/Color-Amarillo.jpg</string>
 			<key>idCat</key>
 			<integer>3</integer>
-			<key>errores</key>
-			<integer>0</integer>
-			<key>correctas</key>
-			<integer>0</integer>
 			<key>palabra</key>
 			<string>amarillo</string>
 		</dict>
@@ -196,10 +140,6 @@
 			<string>https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ6dMawJtWwq1J8-4gHDzNOTF5fqYZN6PW6gDU_8XqVspdb4JnF</string>
 			<key>idCat</key>
 			<integer>3</integer>
-			<key>errores</key>
-			<integer>0</integer>
-			<key>correctas</key>
-			<integer>0</integer>
 			<key>palabra</key>
 			<string>blanco</string>
 		</dict>
@@ -208,10 +148,6 @@
 			<string>http://img3.wikia.nocookie.net/__cb20131102223114/horadeaventura/es/images/a/a0/Morado-09.jpg</string>
 			<key>idCat</key>
 			<integer>3</integer>
-			<key>errores</key>
-			<integer>0</integer>
-			<key>correctas</key>
-			<integer>0</integer>
 			<key>palabra</key>
 			<string>morado</string>
 		</dict>
@@ -220,10 +156,6 @@
 			<string>http://3mcollision.com/media/catalog/product/cache/5/image/9df78eab33525d08d6e5fb8d27136e95/7/7/77068.jpg</string>
 			<key>idCat</key>
 			<integer>3</integer>
-			<key>errores</key>
-			<integer>0</integer>
-			<key>correctas</key>
-			<integer>0</integer>
 			<key>palabra</key>
 			<string>naranja</string>
 		</dict>
@@ -232,10 +164,6 @@
 			<string>http://img1.findthebest.com/sites/default/files/2307/media/images/Magenta_Process_429426_i0.png</string>
 			<key>idCat</key>
 			<integer>3</integer>
-			<key>errores</key>
-			<integer>0</integer>
-			<key>correctas</key>
-			<integer>0</integer>
 			<key>palabra</key>
 			<string>magenta</string>
 		</dict>
@@ -244,10 +172,6 @@
 			<string>http://img.absolut-brasil.com/wp-content/uploads/2008/09/brasil-bandera.jpg</string>
 			<key>idCat</key>
 			<integer>1</integer>
-			<key>errores</key>
-			<integer>0</integer>
-			<key>correctas</key>
-			<integer>0</integer>
 			<key>palabra</key>
 			<string>Brasil</string>
 		</dict>
@@ -256,10 +180,6 @@
 			<string>data:image/png;base64,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</string>
 			<key>idCat</key>
 			<integer>1</integer>
-			<key>errores</key>
-			<integer>0</integer>
-			<key>correctas</key>
-			<integer>0</integer>
 			<key>palabra</key>
 			<string>China</string>
 		</dict>
@@ -268,10 +188,6 @@
 			<string>http://www.banderas-mundo.es/data/flags/ultra/cu.png</string>
 			<key>idCat</key>
 			<integer>1</integer>
-			<key>errores</key>
-			<integer>0</integer>
-			<key>correctas</key>
-			<integer>0</integer>
 			<key>palabra</key>
 			<string>Cuba</string>
 		</dict>
@@ -280,10 +196,6 @@
 			<string>http://www.mapsofworld.com/images/world-countries-flags/french-guiana-flag.gif</string>
 			<key>idCat</key>
 			<integer>1</integer>
-			<key>errores</key>
-			<integer>0</integer>
-			<key>correctas</key>
-			<integer>0</integer>
 			<key>palabra</key>
 			<string>Francia</string>
 		</dict>
@@ -292,10 +204,6 @@
 			<string>http://3.bp.blogspot.com/-wsjxRd2sA4k/U5X8jctLbYI/AAAAAAAADzA/I0KHGc0ZIo8/s1600/bandera+alemania.jpg</string>
 			<key>idCat</key>
 			<integer>1</integer>
-			<key>errores</key>
-			<integer>0</integer>
-			<key>correctas</key>
-			<integer>0</integer>
 			<key>palabra</key>
 			<string>Alemania</string>
 		</dict>
@@ -304,10 +212,6 @@
 			<string>https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRPkTkI3blbESHhaHRXnT3NEEezlIO1cVcV1JRNxMAgeOxltkXR</string>
 			<key>idCat</key>
 			<integer>1</integer>
-			<key>errores</key>
-			<integer>0</integer>
-			<key>correctas</key>
-			<integer>0</integer>
 			<key>palabra</key>
 			<string>España</string>
 		</dict>
@@ -316,10 +220,6 @@
 			<string>http://www.banderas-mundo.es/data/flags/big/ca.png</string>
 			<key>idCat</key>
 			<integer>1</integer>
-			<key>errores</key>
-			<integer>0</integer>
-			<key>correctas</key>
-			<integer>0</integer>
 			<key>palabra</key>
 			<string>Canada</string>
 		</dict>
@@ -328,10 +228,6 @@
 			<string>http://st-listas.20minutos.es/images/2010-05/214843/2326489_640px.jpg?1272764176</string>
 			<key>idCat</key>
 			<integer>1</integer>
-			<key>errores</key>
-			<integer>0</integer>
-			<key>correctas</key>
-			<integer>0</integer>
 			<key>palabra</key>
 			<string>Chile</string>
 		</dict>
@@ -340,10 +236,6 @@
 			<string>http://img2.wikia.nocookie.net/__cb20140717212724/watch-dogs/es/images/2/29/Bandera_M%C3%A9xico.jpg</string>
 			<key>idCat</key>
 			<integer>1</integer>
-			<key>errores</key>
-			<integer>0</integer>
-			<key>correctas</key>
-			<integer>0</integer>
 			<key>palabra</key>
 			<string>Mexico</string>
 		</dict>

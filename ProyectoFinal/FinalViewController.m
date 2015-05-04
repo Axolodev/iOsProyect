@@ -35,19 +35,15 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+
 
 - (IBAction)volverJugar:(id)sender {
     [self.delegado quitarVistas];
 }
+
+/**
+ * Metodo para compartir el score en FB, en el simulador no se puede probar.
+ */
 - (IBAction)compartirFB:(id)sender {
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
     {
@@ -69,6 +65,9 @@
 
     
 }
+/**
+ * Metodo para compartir el score en Twitter.
+ */
 
 - (IBAction)compartirTwitter:(id)sender {
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
